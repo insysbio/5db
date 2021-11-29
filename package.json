@@ -1,0 +1,23 @@
+{
+  "name": "5db",
+  "version": "1.0.0",
+  "description": "Documentation for fIVE DB",
+  "main": "index.js",
+  "directories": {
+    "doc": "docsify serve docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insysbio/5db.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insysbio/5db/issues"
+  },
+  "homepage": "https://github.com/insysbio/5db#readme"
+}
