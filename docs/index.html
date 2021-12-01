@@ -7,17 +7,58 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
 </head>
 <body>
+  <nav>
+    <a href="#/">RU</a>
+    <a href="#/en/">EN</a>
+  </nav>
   <div id="app">Please wait...</div>
+  <style>
+    /* activate full width for content, for mermaid graphs benefit */
+    .markdown-section {
+      max-width: none;
+    }
+  </style>
+  <script> mermaid.initialize({ startOnLoad: true }); </script>
   <script>
     window.$docsify = {
       name: '',
       repo: '',
-      loadSidebar: true
+      loadSidebar: true,
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+            if (lang === "mermaid") {
+              return (
+                '<div class="mermaid">' + mermaid.render(lang, code) + "</div>"
+              );
+            }
+            return this.origin.code.apply(this, arguments);
+          }
+        }
+      }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- mermaid -->
+  <script src="//unpkg.com/mermaid/dist/mermaid.js"> </script>
+  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"> </script>
+  <!-- mathjax -->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/h-hg/docsify-pseudocode/dist/docsify-pseudocode.min.js"></script>  
 </body>
 </html>
