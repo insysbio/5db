@@ -12,7 +12,9 @@ graph TD
     G -->|One| Z[Doc3]
     G -.->|Two and more| E[under<br>development]
 
+```
+<!--
 click X "http://www.github.com" _blank
 click X "./#section1"
-click X "./doc1.md"
-```
+click X "./cytokine/doc1.md"
+-->
