@@ -2,7 +2,8 @@
 * [Главная](/)
 * [Руководство](guide.md)
 -->
-
+* Theory
+    * [Theory](theory/theory.md)
 * fIVE DB
     * [Регистрация](registration.md)
     * [Продукция цитокинов](cytokine/cytokine.md)
