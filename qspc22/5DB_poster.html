@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Verdana' rel='stylesheet'>
+
+
+
+<title>fIVE Database is a repository of in vitro data and estimates of kinetic parameters for systems modeling</title>
+
+
+<script src="5DB_poster_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="5DB_poster_files/plotly-binding-4.10.0.9000/plotly.js"></script>
+<script src="5DB_poster_files/typedarray-0.1/typedarray.min.js"></script>
+<script src="5DB_poster_files/jquery-3.5.1/jquery.min.js"></script>
+<link href="5DB_poster_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="5DB_poster_files/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="5DB_poster_files/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="5DB_poster_files/plotly-main-2.5.1/plotly-latest.min.js"></script>
+
+
+
+
+<style>
+@page {
+size: 33.1in 46.8in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+font-size: 42px;
+width: 33.1in;
+height: 46.8in;
+padding: 0;
+text-align: justify;
+font-family: Verdana;
+}
+.poster_wrap {
+width: 33.1in;
+height: 46.8in;
+padding: 0cm;
+}
+.title_container {
+width: calc(100% - 0mm - 0mm);
+height: calc(18% - 0mm - 0mm);
+overflow: hidden;
+background-color: none;
+border: 0mm solid #7a2685;
+}
+.logo_left {
+float: left;
+width: 10%;
+height: 100%;
+background-color: none;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.logo_right {
+float: right;
+width: 10%;
+height: 100%;
+background-color: none;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.poster_title {
+text-align: center;
+position: relative;
+float: left;
+width: 80%;
+height: 100%;
+color: #7a2685;
+top: 50%;
+transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+}
+#title {
+font-family: Verdana;
+}
+/* unvisited link */
+a:link {
+color: #7a2685;
+text-decoration: none;
+}
+.mybreak {
+  break-before: column;
+}
+/* visited link */
+a:visited {
+color: #7a2685;
+text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+color: #7a2685;
+text-decoration: none;
+}
+
+/* selected link */
+a:active {
+color: #7a2685;
+text-decoration: none;
+}
+.poster_body {
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 200mm;
+-moz-column-rule-width: 200mm;
+column-rule-width: 200mm;
+-webkit-column-rule-style: none;
+-moz-column-rule-style: none;
+column-rule-style: none;
+-webkit-column-rule-color: #008080;
+-moz-column-rule-color: #008080;
+column-rule-color: #008080;
+column-gap: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
+height: 100%;
+color: #000000
+background-color: #ffffff;
+}
+.poster_title h1 {
+font-size: 100pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_body_wrap{
+width: 33.1in;
+height: calc(100% - 18%);
+padding-top: calc(46.8in * 0.01);
+padding-bottom: calc(46.8in * 0.01);
+background-color: #ffffff;
+}
+.poster_title h3 {
+color: #34383A;
+font-size: 40pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_title h3 > sup {
+  font-size: 35pt;
+  margin-left: 0.02em;
+}
+.poster_title h5 {
+color: #34383A;
+font-size: ;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+img {
+margin-top: 0;
+margin-bottom: 0;
+}
+.section {
+  padding: 0.2em;
+}
+.poster_body h1 {
+text-align: center;
+color: #ffffff;
+font-size: 40pt;
+border: 2mm solid #7a2685;
+background-color: #7a2685;
+border-radius: 0mm 0mm;
+margin-top: 2mm;
+margin-bottom: 2mm;
+font-weight: normal;
+}
+.poster_body h2 {
+color: #7a2685;
+font-size: 40pt;
+padding-left: 4mm;
+font-weight: normal;
+}
+.span {
+width: 200%;
+}
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid #7a2685 1mm;
+border-radius: 0.5em;
+padding: 4mm;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+div.sourceCode {
+background-color: transparent;
+width: 85%;
+margin-left: auto;
+margin-right: auto;
+}
+code.sourceCode.r, code.sourceCode.python {
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #7a268524;
+color: #7a2685;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+.caption {
+font-size: 20pt;
+}
+.table caption {
+font-size: 20pt;
+padding-bottom: 3mm;
+
+}
+code {
+font-size: 1em;
+font-family: monospace;
+background-color: #7a268524;
+color: none;
+padding: 1.2mm;
+border-radius: 2mm;
+}
+.poster_title code {
+font-size: 1em;
+}
+table {
+font-size: 40px;
+margin: auto;
+border-top: 3px solid #666;
+border-bottom: 3px solid #666;
+}
+table thead th {
+border-bottom: 3px solid #ddd;
+}
+td {
+padding: 8px;
+}
+th {
+padding: 15px;
+}
+caption {
+margin-bottom: 10px;
+}
+.poster_body p {
+margin-right: 4mm;
+margin-left: 4mm;
+margin-top: 6mm;
+margin-bottom: 10mm;
+color: #000000
+}
+.poster_body ol {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+#ul {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+.references p {
+font-size: 20pt;
+}
+.orcid img {
+  width: 1em;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+<div class="title_container">
+<!-- Left Logo  -->
+<div class="logo_left">
+<img src=Figures/InSysBio-logo-pantone_SQUARE_VERTICAL.svg style="width: 80%">
+</div>
+<!-- Poster Title -->
+<div class= "poster_title">
+<h1 id="title">fIVE Database is a repository<br>of <em>in vitro</em> data and estimates<br>of kinetic parameters<br>for systems modeling</h1>
+<h3 id="author">A. Stepanov, V. Musatova, A. Victorenko, E. Goryacheva, N. Gizzatkulov, O. Demin<sup></sup></h3>
+<h5 id="affiliation"><sup></sup> InSysBio, Moscow, Russia</h5>
+</div>
+<!-- Right Logo  -->
+<div class="logo_right">
+</div>
+</div>
+
+<div class='poster_body_wrap'>
+<div class='poster_body'>
+<style>
+.logo_left {
+ width: 18%;
+ margin-right: 0in;
+ //display: block;
+ //height: 20%;
+ margin-left: 0in;
+ //padding: .3in 0 0;
+ //float: right;
+}
+.logo_right {
+ width: 10%;
+}
+</style>
+<div id="background" class="section level1">
+<h1>BACKGROUND</h1>
+<p>The QSP models are growing as well as the number of model parameters and resources needed to search for data for model calibration. To decrease uncertainty of the model most of the parameters are estimated without fitting and fixed at some values relevant to physiological state. <code>fIVE</code> (from In Vitro Experiment) database - is online tool (<a href="https://5db.insysbio.com/" class="uri">https://5db.insysbio.com/</a>) aimed to facilitate calibration of biomodels based on <em>in vitro</em> data.</p>
+</div>
+<div id="methods" class="section level1">
+<h1>METHODS</h1>
+<p>Curated fIVE DB hosts <em>in vitro</em> experimental datasets manually extracted from literature and translates them into kinetic parameters describing cellular processes like migration, proliferation, differentiation, etc. The framework built-in in fIVE DB is based on InSysBio uniform description of cell processes and their regulations [1]. For several standard <em>in vitro</em> cellular assays, the framework allows to estimate kinetic parameters (<span class="math inline">\(k_{base}\)</span>, <span class="math inline">\(E_{max}\)</span>, <span class="math inline">\(EC_{50}\)</span>, etc.) using kinetic experimental results.
+<!-- 
+(Fig. \@ref(fig:scheme))
+--></p>
+<p>The framework is based on the following statements:<br>
+1. A cell dynamics process is transition between different states of a cell.<br>
+2. Control of each particular process is associated with a generalized receptor. Effector binds to receptor and effect is mediated by state of receptor. States of the receptor with bound activators/inhibitors promote faster/slower transition between cell states. Binding of an effector with receptor is assumed to be in equilibrium.<br>
+3. There are two pairs of binding sites in the receptor: for activator and its modifier and for inhibitor and its modifier.<br>
+4. Rate law of a process regulated by multiple effectors can be presented as:
+<span class="math display">\[ V = k(A,I,M) \cdot Cell_{state_1} \]</span>
+<img src="Figures/scheme.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Сonsider one of the most common cases with one effector (e.g., activator <span class="math inline">\(A\)</span>) and its modifier <span class="math inline">\(M\)</span>. We can derive two equations corresponding to two cases when the activator is non-essential (<span class="math inline">\(k_{base} \not = 0\)</span>) and essential (<span class="math inline">\(k_{base} = 0\)</span>):</p>
+<p><span class="math display">\[ k(A,M) = k_{base} \cdot
+    \frac{
+        1 +  E_{max}^A \cdot
+        \frac{1 + E_M^A \cdot M/EC_{50}^M }
+               { 1 + M/EC_{50}^M } \cdot
+        \frac{ A }{ EC_{50}^A } \mathbin{/}
+        \frac{ 1 + EC_M^A \cdot M / EC_{50}^M }{ 1 + M / EC_{50}^M }
+    }{ 1 +
+        \frac{ A }{ EC_{50}^A } \mathbin{/}
+        \frac{ 1 + EC_M^A \cdot M / EC_{50}^M }{ 1 + M / EC_{50}^M }
+    } \]</span></p>
+<p><span class="math display">\[ k(A,M) = k_{max}^A \cdot
+    \frac{
+        1 + E_M^A \cdot \frac{M}{EC_{50}^M}
+    }{
+        1 + \frac{M}{EC_{50}^M}
+    } \cdot
+    \frac{
+        \frac{A}{EC_{50}^A} \mathbin{/}
+        \frac{1 + EC_M^A \cdot M / EC_{50}^M}
+                {1 + M / EC_{50}^M}
+    }{
+        1 + \frac{A}{EC_{50}^A} \mathbin{/}
+        \frac{1 + EC_M^A \cdot M / EC_{50}^M}
+                {1 + M / EC_{50}^M}
+    } \]</span>
+<!-- 
+\begin{align*}
+& k_{base} - \text{basal rate constant} \\
+& k_{max}^A - basal rate constant
+\end{align*}
+-->
+Parameters that can be estimated from <em>in vitro</em> data:</p>
+<p><span class="math inline">\(k_{base}\)</span> - basal rate constant <br>
+<span class="math inline">\(k_{max}^A\)</span> - maximal rate constant <br>
+<span class="math inline">\(E_{max}^A\)</span> - basal maximal effect of an activator without a modifier <br>
+<span class="math inline">\(E_M^A\)</span> - maximal effect of a modifier on the effect of an activator <br>
+<span class="math inline">\(EC_{50}^A\)</span> - activator’s concentration corresponding to its half-maximal effect without a modifier <br>
+<span class="math inline">\(EC_{50}^M\)</span> - modifier’s concentration corresponding to its half-maximal effect on an activator’s effect <br>
+<span class="math inline">\(EC_M^A\)</span> - maximal modifier’s concentration corresponding to its half-maximal effect on an activator’s effect <br></p>
+</div>
+<div id="results" class="section level1 mybreak">
+<h1>RESULTS</h1>
+<p>fIVE DB stores <em>in vitro</em> datasets, its experimental conditions and kinetic parameters calculated automatically if data available in a source is enough for making such estimates. An approach for translating <em>in vitro</em> and <em>ex vivo</em> experiments into kinetic constants is based on rate laws describing different cell dynamics processes and their regulation with multiple cytokines [2]. Besides, data collected in fIVE DB provides a good start point for model calibration. Immune Response Template (<code>IRT</code>) - InSysBio’s QSP platform of the immune system for which developed approach was used to estimate the parameters as well as for the models of COVID, COPD, asthma, atopic dermatitis and in immunooncology.</p>
+<div id="htmlwidget-e5a1a742105d87390e35" style="width:100%;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e5a1a742105d87390e35">{"x":{"visdat":{"f9d049be8c36":["function () ","plotlyVisDat"]},"cur_data":"f9d049be8c36","attrs":{"f9d049be8c36":{"hole":0.5,"textinfo":"none","marker":{"colors":["#7A2685","#80C342"]},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":[35,65],"labels":["fIVE DB<br>approach","fitted or<br>assumed"],"type":"pie","domain":{"row":0,"column":0},"inherit":true},"f9d049be8c36.1":{"hole":0.5,"textinfo":"none","marker":{"colors":["#7A2685","#80C342"]},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":[40,60],"labels":["fIVE DB<br>approach","fitted or<br>assumed"],"type":"pie","domain":{"row":0,"column":1},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"legend":{"x":0.43,"y":1,"font":{"size":30}},"grid":{"rows":1,"columns":2},"annotations":[{"text":"IRT","x":0.22,"y":0.5,"showarrow":false,"font":{"size":40}},{"text":"COVID","x":0.81,"y":0.5,"showarrow":false,"font":{"size":40}}],"xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"hole":0.5,"textinfo":"none","marker":{"color":"rgba(31,119,180,1)","colors":["#7A2685","#80C342"],"line":{"color":"rgba(255,255,255,1)"}},"values":[35,65],"labels":["fIVE DB<br>approach","fitted or<br>assumed"],"type":"pie","domain":{"row":0,"column":0},"frame":null},{"hole":0.5,"textinfo":"none","marker":{"color":"rgba(255,127,14,1)","colors":["#7A2685","#80C342"],"line":{"color":"rgba(255,255,255,1)"}},"values":[40,60],"labels":["fIVE DB<br>approach","fitted or<br>assumed"],"type":"pie","domain":{"row":0,"column":1},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="discussion" class="section level1">
+<h1>DISCUSSION</h1>
+<p>The growing amount of experimental data and extracting kinetic parameters entails the appearance of services pursuing collection and storage of such a data. Curated database SABIO-RK [3] contains information about biochemical reactions and their corresponding kinetics embedded in their experimental context extracted manually from literature or directly submitted by experimenters. A repository BioModels Parameters [4] provides parameter values from models stored in BioModels Database [5]. The advantage of fIVE DB is the framework describing cell processes and routine automatic calculation parameters using derived formulas. Modelers and experimenters can compare parameters obtained from different sources and figure out the parameter range.</p>
+</div>
+<div id="conclusion" class="section level1">
+<h1>CONCLUSION</h1>
+<p>fIVE DB team is building infrastructure to provide the systems modelling community with more convenient work environment and to make modelling routine less time-consuming and more productive. fIVE DB offer a complex solution including the framework and calculated parameters for equations. fIVE DB is being expanded to include new types of <em>in vitro</em> experiments, cells and molecules. In summary, fIVE DB is a repository to search quantitative data and parameters calculated in the framework of proposed description of cell processes that can accelerate the development of system biology models.</p>
+</div>
+<div id="references" class="section level1">
+<h1>REFERENCES</h1>
+<p><img src="Figures/qr-code_color.svg" width="48%" style = "float:right; margin-left: .3in; padding: 0px" /></p>
+<ol style="list-style-type: decimal">
+<li><p>Oleg Demin et al., ACoP7 (2016), W-021</p></li>
+<li><p><a href="https://insysbio.com/blog/" class="uri">https://insysbio.com/blog/</a></p></li>
+<li><p>Ulrike Wittig et al. Nucleic Acids Research (2012), Volume 40 (Issue D1), Pages D790–D796.</p></li>
+<li><p>Mihai Glont et al. Bioinformatics (2020), Volume 36 (Issue 17), Pages 4649–4654.</p></li>
+<li><p>Rahuman S Malik-Sheriff et al. Nucleic Acids Research (2020), Volume 48 (Issue D1), Pages D407–D415.</p></li>
+</ol>
+<p><!-- 
+[//]: #### Questions? Contact
+[//]: [stepanov\@insysbio.com](mailto:stepanov@insysbio.com){.email} [//]: insysbio.com
+--></p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "true";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+
+
+</body>
+</html>
